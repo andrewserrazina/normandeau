@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  --color-ivory: #f7f4ee;
+  --color-cream: #fcfaf6;
+  --color-stone: #d8d1c6;
+  --color-warm-gray: #aaa197;
+  --color-charcoal: #292826;
+  --color-graphite: #1e1e1c;
+  --color-taupe: #756e66;
+  --color-sage: #7d8575;
+  --color-white: #ffffff;
+
+  --background: var(--color-ivory);
+  --foreground: var(--color-charcoal);
+}
+
+@theme inline {
+  --color-ivory: var(--color-ivory);
+  --color-cream: var(--color-cream);
+  --color-stone: var(--color-stone);
+  --color-warm-gray: var(--color-warm-gray);
+  --color-charcoal: var(--color-charcoal);
+  --color-graphite: var(--color-graphite);
+  --color-taupe: var(--color-taupe);
+  --color-sage: var(--color-sage);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-heading), ui-serif, Georgia, serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
+
+/* Visible, consistent focus treatment for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-sage);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
