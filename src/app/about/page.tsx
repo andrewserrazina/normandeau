@@ -1,0 +1,98 @@
+import { PageHero } from "@/components/ui/PageHero";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
+import { Container } from "@/components/ui/Container";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { CTASection } from "@/components/ui/CTASection";
+import { buildMetadata } from "@/lib/metadata";
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "About" },
+];
+
+export const metadata = buildMetadata({
+  title: "About Normandeau Memorials | West Springfield, MA",
+  description:
+    "Learn about Normandeau Memorials' family-centered approach to memorial design, craftsmanship philosophy, and commitment to Western Massachusetts communities.",
+  path: "/about",
+});
+
+export default function AboutPage() {
+  return (
+    <>
+      <BreadcrumbSchema items={breadcrumbs} />
+      <PageHero
+        eyebrow="About Us"
+        title="Memorial Craftsmanship Rooted in Western Massachusetts"
+        description="Normandeau Memorials is based in West Springfield, Massachusetts, working with families across the region to design meaningful, enduring memorials."
+      />
+      <Breadcrumbs items={breadcrumbs} />
+
+      <section className="py-16 sm:py-20">
+        <Container width="medium">
+          <SectionHeading
+            eyebrow="Introduction"
+            title="Who We Are"
+            description="Normandeau Memorials designs and crafts granite memorials for families throughout West Springfield, Springfield, and the surrounding Western Massachusetts communities. TODO(content): Add verified company history, founding details, and background once confirmed — no founding date, generational history, or ownership details are stated here until verified."
+          />
+        </Container>
+      </section>
+
+      <section className="bg-cream py-16 sm:py-20 border-y border-stone">
+        <Container>
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+            <div>
+              <SectionHeading
+                eyebrow="Our Approach"
+                title="A Family-Centered Approach"
+                description="Every memorial begins with listening. We take the time to understand the person being remembered and the family creating the tribute, so the final design reflects what matters most to you."
+              />
+            </div>
+            <ImagePlaceholder
+              alt="Normandeau Memorials workshop or team photograph, to be supplied"
+              aspect="video"
+              label="Workshop photograph placeholder"
+            />
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container width="medium">
+          <SectionHeading
+            eyebrow="Craftsmanship"
+            title="Our Craftsmanship Philosophy"
+            description="We treat each memorial as a lasting piece of craftsmanship. That means careful attention to granite selection, precise lettering, and a finished product built to stand for generations."
+          />
+        </Container>
+      </section>
+
+      <section className="bg-cream py-16 sm:py-20 border-y border-stone">
+        <Container width="medium">
+          <SectionHeading
+            eyebrow="Guidance"
+            title="Guidance Through the Memorial Process"
+            description="Choosing a memorial involves many decisions — material, shape, wording, and cemetery requirements among them. We walk with your family through each step, explaining options clearly and at a comfortable pace."
+          />
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container width="medium">
+          <SectionHeading
+            eyebrow="Community"
+            title="Commitment to Western Massachusetts"
+            description="Based in West Springfield, we're familiar with the cemeteries and communities throughout the Pioneer Valley and remain committed to serving families here with care and attention to detail."
+          />
+        </Container>
+      </section>
+
+      <CTASection
+        title="Ready to Talk Through Your Family's Memorial?"
+        description="We're happy to answer questions and help you understand your options."
+      />
+    </>
+  );
+}
