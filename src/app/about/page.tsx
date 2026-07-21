@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 import { CTASection } from "@/components/ui/CTASection";
 import { buildMetadata } from "@/lib/metadata";
+import { siteConfig } from "@/config/site-config";
 
 const breadcrumbs = [
   { label: "Home", href: "/" },
@@ -26,7 +27,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title="Memorial Craftsmanship Rooted in Western Massachusetts"
-        description="Normandeau Memorials is based in West Springfield, Massachusetts, working with families across the region to design meaningful, enduring memorials."
+        description={`Family owned since ${siteConfig.familyOwnedSince}, Normandeau Memorials is based in West Springfield, Massachusetts, working with families across the region to design meaningful, enduring memorials.`}
       />
       <Breadcrumbs items={breadcrumbs} />
 
@@ -35,7 +36,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Introduction"
             title="Who We Are"
-            description="Normandeau Memorials designs and crafts granite memorials for families throughout West Springfield, Springfield, and the surrounding Western Massachusetts communities. TODO(content): Add verified company history, founding details, and background once confirmed — no founding date, generational history, or ownership details are stated here until verified."
+            description={`Normandeau Memorials has been family owned since ${siteConfig.familyOwnedSince}, designing and crafting granite memorials for families throughout West Springfield, Springfield, and the surrounding Western Massachusetts communities. TODO(content): Add further verified company history or ownership details if the family wants to share more than the founding year.`}
           />
         </Container>
       </section>
@@ -64,8 +65,14 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="Craftsmanship"
             title="Our Craftsmanship Philosophy"
-            description="We treat each memorial as a lasting piece of craftsmanship. That means careful attention to granite selection, precise lettering, and a finished product built to stand for generations."
+            description="We treat each memorial as a lasting piece of craftsmanship. That means careful attention to granite selection — including grey, pink, mahogany, and black — precise lettering, and a finished product built to stand for generations."
           />
+          <p className="mt-6 max-w-2xl text-[15px] text-taupe leading-relaxed">
+            {siteConfig.guarantee} Our showroom features Barre Guild
+            monuments, benches, and flat markers on display, along with
+            catalogs of designs and engravings to help your family plan a
+            memorial.
+          </p>
         </Container>
       </section>
 

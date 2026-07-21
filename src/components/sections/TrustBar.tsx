@@ -1,7 +1,9 @@
-import { Compass, Gem, Landmark, PenTool } from "lucide-react";
+import { Award, Compass, Gem, Landmark, PenTool } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { siteConfig } from "@/config/site-config";
 
 const trustPoints = [
+  { icon: Award, label: `Family Owned Since ${siteConfig.familyOwnedSince}` },
   { icon: Compass, label: "Personalized Guidance" },
   { icon: PenTool, label: "Custom Memorial Design" },
   { icon: Gem, label: "Quality Granite" },
@@ -12,7 +14,7 @@ export function TrustBar() {
   return (
     <section className="border-b border-stone bg-cream py-10">
       <Container>
-        <ul className="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <ul className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-5">
           {trustPoints.map(({ icon: Icon, label }) => (
             <li key={label} className="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-left">
               <Icon aria-hidden="true" className="size-6 shrink-0 text-sage" />

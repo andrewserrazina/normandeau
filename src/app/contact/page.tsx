@@ -56,8 +56,11 @@ export default function ContactPage() {
                   <Phone aria-hidden="true" className="mt-1 size-5 shrink-0 text-sage" />
                   <div>
                     <p className="font-medium text-charcoal">Phone</p>
-                    <a href={contact.phoneHref} className="text-[15px] text-taupe hover:text-charcoal">
+                    <a href={contact.phoneHref} className="block text-[15px] text-taupe hover:text-charcoal">
                       {contact.phoneDisplay}
+                    </a>
+                    <a href={contact.phoneAltHref} className="block text-[15px] text-taupe hover:text-charcoal">
+                      {contact.phoneAltDisplay}
                     </a>
                   </div>
                 </li>

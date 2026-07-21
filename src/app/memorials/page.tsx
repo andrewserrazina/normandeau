@@ -25,7 +25,7 @@ const educationTopics = [
   {
     title: "Granite Colors",
     description:
-      "Granite is quarried in a range of natural colors, from classic grays and blacks to warmer browns, blues, and reds. Color availability can vary, and we'll show you samples in person before you decide.",
+      "We work with a variety of granite colors, including grey, pink, mahogany, and black. Color availability can vary, and our showroom has samples along with catalogs of designs and engravings to help you decide.",
   },
   {
     title: "Shapes",
@@ -56,6 +56,21 @@ const educationTopics = [
     title: "Vases",
     description:
       "Attached or companion vases provide a place for flowers and can be matched to the memorial's granite color and finish.",
+  },
+  {
+    title: "Porcelain Photos",
+    description:
+      "A porcelain photo can be added to a memorial to include a lasting image of the person being remembered.",
+  },
+  {
+    title: "Eternal Lights",
+    description:
+      "An eternal (vigil) light can be added to a memorial as a lasting symbolic element.",
+  },
+  {
+    title: "Pet Memorials",
+    description:
+      "We also offer smaller memorial markers designed for pets.",
   },
   {
     title: "Cemetery Regulations",
