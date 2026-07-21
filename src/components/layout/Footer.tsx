@@ -66,9 +66,15 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone aria-hidden="true" className="size-4 shrink-0 text-sage" />
-                <a href={contact.phoneHref} className="hover:text-white transition-colors">
-                  {contact.phoneDisplay}
-                </a>
+                <span>
+                  <a href={contact.phoneHref} className="hover:text-white transition-colors">
+                    {contact.phoneDisplay}
+                  </a>
+                  {" or "}
+                  <a href={contact.phoneAltHref} className="hover:text-white transition-colors">
+                    {contact.phoneAltDisplay}
+                  </a>
+                </span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail aria-hidden="true" className="size-4 shrink-0 text-sage" />

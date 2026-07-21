@@ -14,7 +14,7 @@ export const faqs: FAQItem[] = [
   {
     question: "What information should we bring to a consultation?",
     answer:
-      "It helps to bring the cemetery name and section/lot information if you have it, any existing memorial details for companion or additional inscriptions, and any inspiration such as photos, wording, or symbols you'd like to include.",
+      "Please know the cemetery, lot number, and section where the memorial will be placed. If you're ordering an additional inscription, it helps to check how the existing dates are written on the monument, since we'll match that formatting. Any inspiration such as photos, wording, or symbols you'd like to include is also helpful.",
   },
   {
     question: "How long does the memorial process take?",
@@ -44,7 +44,7 @@ export const faqs: FAQItem[] = [
   {
     question: "What granite colors are available?",
     answer:
-      "Granite is available in a range of colors and finishes, from traditional grays and blacks to warmer and more distinctive tones. We'll show you samples and help you choose one suited to your design and budget.",
+      "We work with a variety of granite colors, including grey, pink, mahogany, and black. We'll show you samples in our showroom and help you choose one suited to your design.",
   },
   {
     question: "Can we personalize a memorial?",
