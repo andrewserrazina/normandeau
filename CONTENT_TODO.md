@@ -9,10 +9,10 @@ before this site goes live.
 
 ## Branding
 
-- [ ] Supply the original Normandeau Memorials logo file and place it at
-      `public/images/normandeau-logo.png` (see `public/images/README.md`).
-- [ ] Update `src/components/layout/Logo.tsx` to render the real logo via
-      `next/image` (currently a text-based wordmark placeholder).
+- [x] The real Normandeau Memorials logo (classical column motif with
+      "NORMANDEAU / MEMORIALS" wordmark) was supplied and is at
+      `public/images/normandeau-logo.png`, rendered via `next/image` in
+      `src/components/layout/Logo.tsx` in both the header and footer.
 
 ## Business Facts
 
@@ -61,23 +61,21 @@ before this site goes live.
 
 ## Photography
 
-All images are currently `ImagePlaceholder` components, not stock
-photos, since the previous site's photos could not be retrieved through
-this build process (expired SSL cert blocked direct fetching). Real
-photography still needed for:
-
-- [ ] Hero image — professionally photographed granite memorial.
-- [ ] Memorial category images (Upright, Flat, Slant, Bevel, Companion,
-      Custom, Benches, Mausoleums, Veterans, Cremation).
-- [ ] Featured craftsmanship gallery images on the homepage.
-- [ ] Full gallery images across all filter categories
-      (`src/data/gallery-items.ts`).
+- [x] Hero image, memorial category photos (Upright, Companion, Slant,
+      Bevel, Custom), the homepage featured gallery, and the full
+      `/gallery` page now use 12 real photos supplied by the business
+      (see `public/images/gallery/` and `public/images/README.md` for
+      the full mapping). Original filenames were preserved as requested.
+- [ ] Flat Marker and Restoration gallery photos — none were supplied,
+      so those two gallery filters currently show the empty state.
+- [ ] Memorial category photos still needed for: Benches, Mausoleums,
+      Veterans Memorials, Cremation Memorials.
 - [ ] About page: team and/or workshop photography.
 - [ ] Map embed or static map image for the Contact page.
-- Note: the previous site had real photos including a storefront photo,
-  an engraver photo, bench photos, and monument slideshow photos — if
-  those files can be recovered from the old Weebly hosting account
-  before it's fully decommissioned, they'd be a good starting point.
+- Note: the previous site also had a storefront photo, an engraver
+  photo, and additional bench photos in its homepage slideshow — if
+  those can be recovered from the old Weebly hosting account before
+  it's decommissioned, they'd be good additions.
 
 ## Testimonials
 

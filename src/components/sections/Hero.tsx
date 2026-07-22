@@ -28,11 +28,11 @@ export function Hero() {
             </div>
           </div>
 
-          {/* TODO: Replace with a professionally photographed granite memorial image via next/image. */}
           <ImagePlaceholder
-            alt="Professionally photographed granite memorial, to be supplied"
-            aspect="portrait"
-            label="Granite memorial photograph placeholder"
+            alt="Mahogany granite upright monument with etched cross and rose corner details, displayed in our showroom courtyard"
+            src="/images/gallery/Mahogany.jpg"
+            aspect="video"
+            priority
             className="w-full"
           />
         </div>

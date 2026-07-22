@@ -15,7 +15,7 @@ export function Footer() {
       <Container className="py-16">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <Logo variant="light" />
+            <Logo />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-stone/90">
               {siteConfig.description}
             </p>

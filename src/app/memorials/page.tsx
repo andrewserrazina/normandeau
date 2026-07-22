@@ -102,6 +102,7 @@ export default function MemorialsPage() {
                 <div className={index % 2 === 1 ? "lg:order-2" : undefined}>
                   <ImagePlaceholder
                     alt={category.imageAlt}
+                    src={category.image}
                     aspect="wide"
                     label={category.title}
                   />

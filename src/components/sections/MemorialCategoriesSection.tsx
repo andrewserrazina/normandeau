@@ -34,6 +34,7 @@ export function MemorialCategoriesSection() {
               description={category.shortDescription}
               href={`/memorials#${category.slug}`}
               imageAlt={category.imageAlt}
+              image={category.image}
             />
           ))}
         </div>

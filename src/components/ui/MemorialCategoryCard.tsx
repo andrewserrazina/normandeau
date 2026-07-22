@@ -7,6 +7,7 @@ interface MemorialCategoryCardProps {
   description: string;
   href: string;
   imageAlt: string;
+  image?: string;
 }
 
 export function MemorialCategoryCard({
@@ -14,13 +15,19 @@ export function MemorialCategoryCard({
   description,
   href,
   imageAlt,
+  image,
 }: MemorialCategoryCardProps) {
   return (
     <Link
       href={href}
       className="group flex h-full flex-col overflow-hidden rounded-sm border border-stone bg-cream shadow-sm transition-shadow duration-200 hover:shadow-md focus-visible:outline-2 focus-visible:outline-sage"
     >
-      <ImagePlaceholder alt={imageAlt} aspect="video" className="rounded-none border-0 border-b border-stone" />
+      <ImagePlaceholder
+        alt={imageAlt}
+        src={image}
+        aspect="video"
+        className="rounded-none border-0 border-b border-stone"
+      />
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-medium text-charcoal">{title}</h3>
         <p className="mt-2 flex-1 text-[15px] text-taupe leading-relaxed">{description}</p>

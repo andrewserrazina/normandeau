@@ -20,6 +20,7 @@ export function FeaturedGallery() {
             <ImagePlaceholder
               key={item.id}
               alt={item.imageAlt}
+              src={item.image}
               aspect="square"
               label={item.title}
             />

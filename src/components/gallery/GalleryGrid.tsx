@@ -78,7 +78,7 @@ export function GalleryGrid() {
               className="group text-left focus-visible:outline-2 focus-visible:outline-sage rounded-sm"
               aria-haspopup="dialog"
             >
-              <ImagePlaceholder alt={item.imageAlt} aspect="square" label={item.title} />
+              <ImagePlaceholder alt={item.imageAlt} src={item.image} aspect="square" label={item.title} />
               <p className="mt-2 text-sm text-taupe">{item.caption}</p>
             </button>
           ))}
@@ -106,6 +106,7 @@ export function GalleryGrid() {
             </div>
             <ImagePlaceholder
               alt={activeItem.imageAlt}
+              src={activeItem.image}
               aspect="video"
               label={activeItem.title}
               className="mt-4"

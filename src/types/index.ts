@@ -29,6 +29,8 @@ export interface MemorialCategory {
   suitableFor: string[];
   customization: string[];
   imageAlt: string;
+  /** Path under /public. Omit to show the placeholder box. */
+  image?: string;
 }
 
 export interface GalleryItem {
@@ -37,6 +39,8 @@ export interface GalleryItem {
   category: GalleryCategory;
   caption: string;
   imageAlt: string;
+  /** Path under /public. Omit to show the placeholder box. */
+  image?: string;
 }
 
 export type GalleryCategory =

@@ -24,7 +24,8 @@ export const memorialCategories: MemorialCategory[] = [
       "Etched artwork or emblems",
       "Vases and companion bases",
     ],
-    imageAlt: "Upright granite monument memorial placeholder",
+    imageAlt: "Black granite upright monument with an etched rose corner design",
+    image: "/images/gallery/BlackRose.jpg",
   },
   {
     slug: "companion-monuments",
@@ -44,7 +45,8 @@ export const memorialCategories: MemorialCategory[] = [
       "Matching or contrasting granite tones",
       "Center artwork or emblem",
     ],
-    imageAlt: "Companion granite memorial for two placeholder",
+    imageAlt: "Heart-shaped granite memorial with a porcelain photo portrait",
+    image: "/images/gallery/perpetuate.jpg",
   },
   {
     slug: "flat-markers",
@@ -83,7 +85,8 @@ export const memorialCategories: MemorialCategory[] = [
       "Lettering layout",
       "Etched artwork or emblems",
     ],
-    imageAlt: "Slant granite memorial marker placeholder",
+    imageAlt: "Rock-pitched pink granite slant memorial marker",
+    image: "/images/gallery/Pink1.jpg",
   },
   {
     slug: "bevel-markers",
@@ -102,7 +105,8 @@ export const memorialCategories: MemorialCategory[] = [
       "Lettering style",
       "Border and edge detail",
     ],
-    imageAlt: "Bevel granite memorial marker placeholder",
+    imageAlt: "Gray granite memorial marker with a beveled geometric profile",
+    image: "/images/gallery/Types.jpg",
   },
   {
     slug: "benches",
@@ -200,7 +204,8 @@ export const memorialCategories: MemorialCategory[] = [
       "Fully personalized artwork",
       "Combination of granite colors and finishes",
     ],
-    imageAlt: "Custom-designed granite memorial placeholder",
+    imageAlt: "Book of Life custom-shaped granite memorial with an etched rose medallion",
+    image: "/images/gallery/Traditional.jpg",
   },
 ];
 

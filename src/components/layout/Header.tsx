@@ -35,7 +35,7 @@ export function Header() {
     >
       <Container>
         <div className={cn("flex items-center justify-between transition-[height] duration-200", scrolled ? "h-[68px]" : "h-20")}>
-          <Logo />
+          <Logo priority />
 
           <nav aria-label="Primary" className="hidden lg:block">
             <ul className="flex items-center gap-8">
