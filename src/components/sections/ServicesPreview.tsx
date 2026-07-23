@@ -9,7 +9,6 @@ export function ServicesPreview() {
     <section className="bg-cream py-16 sm:py-20 border-y border-stone">
       <Container>
         <SectionHeading
-          eyebrow="Services"
           title="Support at Every Stage"
           description="Beyond new memorial design, we help families with lettering, inscriptions, cleaning, restoration, and repair."
         />

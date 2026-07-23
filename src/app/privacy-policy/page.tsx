@@ -21,7 +21,7 @@ export default function PrivacyPolicyPage() {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
-      <PageHero eyebrow="Legal" title="Privacy Policy" />
+      <PageHero title="Privacy Policy" />
       <Breadcrumbs items={breadcrumbs} />
 
       <section className="py-16 sm:py-20">

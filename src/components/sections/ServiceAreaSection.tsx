@@ -8,7 +8,6 @@ export function ServiceAreaSection() {
     <section className="bg-cream py-16 sm:py-20 border-y border-stone">
       <Container>
         <SectionHeading
-          eyebrow="Where We Serve"
           title="Service Area and Location"
           description="Normandeau Memorials is located in West Springfield, Massachusetts, and serves families throughout the Pioneer Valley and surrounding communities."
         />

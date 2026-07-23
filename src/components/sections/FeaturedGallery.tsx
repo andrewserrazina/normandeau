@@ -11,7 +11,6 @@ export function FeaturedGallery() {
     <section className="py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Craftsmanship"
           title="Featured Craftsmanship Gallery"
           description="A look at the range of memorial styles and finishes we work with."
         />

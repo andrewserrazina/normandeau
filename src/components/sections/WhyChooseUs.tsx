@@ -34,7 +34,6 @@ export function WhyChooseUs() {
     <section className="py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Why Families Choose Us"
           title="Guidance You Can Rely On"
           description="Choosing a memorial is a significant decision. Here is how we support families through it."
         />

@@ -23,7 +23,6 @@ export default function GalleryPage() {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <PageHero
-        eyebrow="Gallery"
         title="A Look at Our Craftsmanship"
         description="Browse memorial styles by category. Flat marker and restoration photography is still being added — check back soon for those categories."
       />

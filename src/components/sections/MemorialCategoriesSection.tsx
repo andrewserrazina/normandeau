@@ -22,7 +22,6 @@ export function MemorialCategoriesSection() {
     <section className="bg-cream py-16 sm:py-20 border-y border-stone">
       <Container>
         <SectionHeading
-          eyebrow="Memorial Options"
           title="Memorial Categories"
           description="Explore the range of memorial styles available, each suited to different cemeteries, budgets, and personal preferences."
         />

@@ -28,7 +28,6 @@ export default function ContactPage() {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <PageHero
-        eyebrow="Contact"
         title="We'd Welcome the Chance to Talk"
         description="Reach out by phone, email, or the form below to schedule a consultation or ask a question."
       />
@@ -38,7 +37,7 @@ export default function ContactPage() {
         <Container>
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
             <div className="lg:col-span-2">
-              <SectionHeading eyebrow="Details" title="Visit or Reach Us" />
+              <SectionHeading title="Visit or Reach Us" />
 
               <ul className="mt-8 flex flex-col gap-6">
                 <li className="flex gap-3">
@@ -122,7 +121,7 @@ export default function ContactPage() {
             </div>
 
             <div className="lg:col-span-3">
-              <SectionHeading eyebrow="Consultation Request" title="Send Us a Message" />
+              <SectionHeading title="Send Us a Message" />
               <div className="mt-8 rounded-sm border border-stone bg-cream p-6 sm:p-8">
                 <ConsultationForm />
               </div>

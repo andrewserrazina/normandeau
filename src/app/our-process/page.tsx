@@ -23,7 +23,6 @@ export default function OurProcessPage() {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <PageHero
-        eyebrow="Our Process"
         title="A Clear Path from First Conversation to Finished Memorial"
         description="Every family's memorial is different, but the process we follow stays consistent, transparent, and collaborative."
       />

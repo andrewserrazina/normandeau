@@ -8,7 +8,6 @@ export function ProcessOverview() {
     <section className="bg-cream py-16 sm:py-20 border-y border-stone">
       <Container>
         <SectionHeading
-          eyebrow="How It Works"
           title="Our Process"
           description="A clear, five-step path from first conversation to finished memorial."
         />

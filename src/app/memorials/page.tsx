@@ -84,7 +84,6 @@ export default function MemorialsPage() {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <PageHero
-        eyebrow="Memorial Options"
         title="Find the Right Memorial for Your Family"
         description="From traditional upright monuments to fully custom designs, explore the memorial styles we work with and what makes each one distinct."
       />
@@ -157,7 +156,6 @@ export default function MemorialsPage() {
       <section className="bg-cream py-16 sm:py-20 border-y border-stone">
         <Container>
           <SectionHeading
-            eyebrow="Education"
             title="Understanding Your Options"
             description="A few of the design elements that shape every memorial. Final availability may depend on your cemetery's rules and current granite supply."
           />

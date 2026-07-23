@@ -1,8 +1,6 @@
 import { cn } from "@/lib/utils";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 
 interface SectionHeadingProps {
-  eyebrow?: string;
   title: string;
   description?: string;
   align?: "left" | "center";
@@ -11,7 +9,6 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
-  eyebrow,
   title,
   description,
   align = "left",
@@ -26,8 +23,7 @@ export function SectionHeading({
         className
       )}
     >
-      {eyebrow && <Eyebrow className={align === "center" ? "justify-center" : undefined}>{eyebrow}</Eyebrow>}
-      <Tag className="mt-3 text-3xl sm:text-4xl font-medium text-charcoal text-balance">
+      <Tag className="text-3xl sm:text-4xl font-medium text-charcoal text-balance">
         {title}
       </Tag>
       {description && (

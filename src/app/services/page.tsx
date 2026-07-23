@@ -24,7 +24,6 @@ export default function ServicesPage() {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <PageHero
-        eyebrow="Services"
         title="Support Through Every Stage of a Memorial"
         description="Whether you're designing a new memorial or caring for an existing one, we offer services to help families throughout the process."
       />

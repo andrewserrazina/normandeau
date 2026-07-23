@@ -8,7 +8,6 @@ export function ContactSection() {
       <Container width="narrow">
         <SectionHeading
           align="center"
-          eyebrow="Get in Touch"
           title="Start with a Consultation"
           description="Share a few details and we'll follow up to schedule a time to talk."
         />

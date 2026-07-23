@@ -1,5 +1,4 @@
 import { Container } from "@/components/ui/Container";
-import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
 
@@ -9,8 +8,7 @@ export function Hero() {
       <Container>
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
-            <Eyebrow>Memorial Craftsmanship in Western Massachusetts</Eyebrow>
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-[3.25rem] font-medium leading-[1.1] text-charcoal text-balance">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] font-medium leading-[1.1] text-charcoal text-balance">
               Creating Lasting Memorials for the Lives That Matter Most
             </h1>
             <p className="mt-6 max-w-xl text-lg text-taupe leading-relaxed text-pretty">

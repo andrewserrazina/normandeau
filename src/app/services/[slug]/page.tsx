@@ -55,19 +55,19 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
   return (
     <>
       <BreadcrumbSchema items={breadcrumbs} />
-      <PageHero eyebrow="Services" title={service.title} description={service.heroDescription} />
+      <PageHero title={service.title} description={service.heroDescription} />
       <Breadcrumbs items={breadcrumbs} />
 
       <section className="py-16 sm:py-20">
         <Container width="medium">
-          <SectionHeading eyebrow="Who It's For" title="Is This Service Right for You?" />
+          <SectionHeading title="Is This Service Right for You?" />
           <p className="mt-4 text-[15px] text-taupe leading-relaxed">{service.whoItsFor}</p>
         </Container>
       </section>
 
       <section className="bg-cream py-16 sm:py-20 border-y border-stone">
         <Container width="medium">
-          <SectionHeading eyebrow="What to Expect" title="Typical Process" />
+          <SectionHeading title="Typical Process" />
           <ol className="mt-6 flex flex-col gap-4">
             {service.process.map((step, index) => (
               <li key={step} className="flex gap-4">
@@ -83,7 +83,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       <section className="py-16 sm:py-20">
         <Container width="medium">
-          <SectionHeading eyebrow="Considerations" title="Things to Keep in Mind" />
+          <SectionHeading title="Things to Keep in Mind" />
           <ul className="mt-6 flex flex-col gap-3">
             {service.considerations.map((item) => (
               <li key={item} className="flex gap-3 text-[15px] text-taupe leading-relaxed">
@@ -98,7 +98,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       {previewFaqs.length > 0 && (
         <section className="bg-cream py-16 sm:py-20 border-y border-stone">
           <Container width="medium">
-            <SectionHeading eyebrow="Common Questions" title="FAQ Preview" />
+            <SectionHeading title="FAQ Preview" />
             <div className="mt-6 flex flex-col gap-6">
               {previewFaqs.map((faq) => (
                 <div key={faq.question}>
@@ -116,7 +116,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
       <section className="py-16 sm:py-20">
         <Container>
-          <SectionHeading eyebrow="Related" title="Related Services" />
+          <SectionHeading title="Related Services" />
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {relatedServices.map((related) => (
               <ServiceCard

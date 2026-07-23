@@ -26,7 +26,6 @@ export default function FAQPage() {
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema items={faqs} />
       <PageHero
-        eyebrow="FAQ"
         title="Frequently Asked Questions"
         description="Answers to common questions families ask when planning a memorial."
       />

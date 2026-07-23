@@ -15,7 +15,6 @@ export function Testimonials() {
     <section className="py-16 sm:py-20">
       <Container>
         <SectionHeading
-          eyebrow="Families We've Served"
           title="What Families Are Saying"
         />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
