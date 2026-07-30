@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
 import { ImagePlaceholder } from "@/components/ui/ImagePlaceholder";
+import { siteConfig } from "@/config/site-config";
 
 export function Hero() {
   return (
@@ -27,8 +28,8 @@ export function Hero() {
           </div>
 
           <ImagePlaceholder
-            alt="Mahogany granite upright monument with etched cross and rose corner details, displayed in our showroom courtyard"
-            src="/images/gallery/Mahogany.jpg"
+            alt={siteConfig.heroImageAlt}
+            src={siteConfig.heroImage}
             aspect="video"
             priority
             className="w-full"

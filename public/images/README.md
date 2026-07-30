@@ -15,20 +15,23 @@ recreated — used exactly as supplied.
 
 ## Gallery and section photography
 
-`public/images/gallery/` now contains 12 real photos supplied by the
-business (original filenames preserved: `BlackRose.jpg`, `GrayCross.jpg`,
-`Mahogany.jpg`, `Pink1.jpg`, `Pink2.jpg`, `Traditional.jpg`,
-`Traditional1.jpg`, `Types.jpg`, `artisticetchings.jpg`,
-`enduringgranite.jpg`, `father.jpg`, `perpetuate.jpg`). They're wired into
-the homepage hero, the memorial category cards, the featured gallery
-section, and the full `/gallery` page via `src/data/gallery-items.ts` and
-`src/data/memorial-categories.ts`.
+Real photography now lives under `public/uploads/gallery/` (original
+filenames preserved: `BlackRose.jpg`, `GrayCross.jpg`, `Mahogany.jpg`,
+`Pink1.jpg`, `Pink2.jpg`, `Traditional.jpg`, `Traditional1.jpg`,
+`Types.jpg`, `artisticetchings.jpg`, `enduringgranite.jpg`, `father.jpg`,
+`perpetuate.jpg`) — that's the folder the TinaCMS media picker manages
+(see `tina/config.ts`'s `media.tina.mediaRoot`), so new uploads land
+there automatically. They're wired into the homepage hero, the memorial
+category cards, the featured gallery section, and the full `/gallery`
+page via `content/gallery-items.json` and
+`content/memorial-categories.json` (editable at `/admin/index.html`,
+or by hand — see README.md in the project root).
 
 Everywhere a photo hasn't been supplied yet, `ImagePlaceholder`
 (`src/components/ui/ImagePlaceholder.tsx`) still renders a labeled
-placeholder box instead of a stock image — pass it a `src` prop pointing
-under `/public` to swap in a real photo; omit `src` to keep the
-placeholder. Still needed:
+placeholder box instead of a stock image — set the content file's
+`image` field to a path under `/public` to swap in a real photo; leave
+it unset to keep the placeholder. Still needed:
 
 - Flat marker and restoration-work photography (no gallery filter results
   yet for those two categories).

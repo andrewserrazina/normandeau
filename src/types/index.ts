@@ -62,6 +62,11 @@ export interface ServiceArea {
   state: string;
 }
 
+export interface Testimonial {
+  quote: string;
+  attribution: string;
+}
+
 export type ContactMethod = "phone" | "email" | "either";
 
 export interface ConsultationFormValues {

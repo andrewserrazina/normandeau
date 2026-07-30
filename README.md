@@ -18,6 +18,9 @@ list before launch.
 - lucide-react icons
 - next/font (Cormorant Garamond for headings, Inter for body)
 - ESLint (`eslint-config-next`)
+- TinaCMS — lets the business owner edit text and photos through a web
+  UI instead of code; see "Editing Content with TinaCMS" below.
+- Deployed on Cloudflare Pages/Workers via `@opennextjs/cloudflare`.
 
 ## Installation
 
@@ -38,6 +41,10 @@ npm run start    # serve the production build locally
 ## Project Structure
 
 ```
+content/                   JSON content edited via the TinaCMS admin (see below)
+tina/
+  config.ts                TinaCMS schema — defines every editable field
+  __generated__/            Build output (gitignored, regenerated on every build)
 src/
   app/                     Routes (App Router). Each folder is a page.
     services/[slug]/       Dynamic route rendering the 6 individual service pages.
@@ -51,15 +58,16 @@ src/
     seo/                    LocalBusinessSchema, BreadcrumbSchema, FAQSchema
     gallery/                GalleryGrid (filters + lightbox)
   config/
-    site-config.ts          Single source of truth for contact info, domain, hours
+    site-config.ts          Reads content/site-settings.json; adds url/locale constants
   data/
-    navigation.ts           Primary/footer nav + Services dropdown links
-    services.ts             Service copy + icons, keyed by slug
-    memorial-categories.ts  Memorial type copy for homepage + /memorials
-    gallery-items.ts        Gallery placeholder entries + filter categories
-    faqs.ts                 FAQ content (shared by /faq and service pages)
-    service-areas.ts        Towns served
-    process-steps.ts        5-step process (short + detailed copy)
+    navigation.ts           Primary/footer nav + Services dropdown links (code, not CMS)
+    services.ts             Reads content/services.json; maps icon names to components
+    memorial-categories.ts  Reads content/memorial-categories.json
+    gallery-items.ts        Reads content/gallery-items.json
+    faqs.ts                 Reads content/faqs.json
+    service-areas.ts        Reads content/service-areas.json
+    process-steps.ts        Reads content/process-steps.json
+    testimonials.ts         Reads content/testimonials.json
   lib/
     metadata.ts             buildMetadata() helper for per-page SEO
     form-service.ts         Form submission abstraction (see below)
@@ -67,42 +75,80 @@ src/
     utils.ts                cn() class-name helper
   types/                    Shared TypeScript types
 public/
-  images/                   Logo + photography — see README.md inside this folder
+  uploads/                  Photos managed through the TinaCMS media picker
+  images/                   Logo (not CMS-managed — see below)
 ```
+
+## Editing Content with TinaCMS
+
+The business owner can update text and photos at **`/admin/index.html`**
+without touching code. It's backed by TinaCMS (free tier covers up to 2
+editors) and commits changes straight to this repo, which redeploys
+automatically on Cloudflare.
+
+**One-time setup required before this works in production:**
+
+1. Sign up at [tina.io](https://tina.io) and connect this GitHub repository.
+2. From the Tina Cloud project dashboard, copy the **Client ID** and
+   generate a **Content Token**.
+3. In the Cloudflare Pages project settings, add two environment
+   variables: `NEXT_PUBLIC_TINA_CLIENT_ID` and `TINA_TOKEN` (use the
+   values from step 2), then redeploy.
+4. Confirm the Cloudflare Pages build command runs `npm run build` (it
+   now runs `tinacms build` before `next build` — see `package.json`).
+   If Cloudflare's dashboard has a custom build command instead, prefix
+   it with `npx tinacms build &&`.
+5. Give the business owner the tina.io login you set up in step 1 (or
+   invite their email as a collaborator from the Tina Cloud dashboard)
+   plus the `/admin/index.html` URL.
+
+**What's editable:** services, memorial categories, gallery photos, the
+homepage hero photo, FAQs, testimonials, service areas, the five-step
+process, and site settings (contact info, hours, guarantee language,
+social links). Each maps to a JSON file in `content/` — see
+`tina/config.ts` for the exact fields.
+
+**What's intentionally not CMS-managed:** navigation links
+(`src/data/navigation.ts`), the domain (`src/config/site-config.ts`),
+and the logo (below) — these are rare, technical changes better made in
+code with review, not casual day-to-day edits.
+
+**Local development:** `npm run dev` now runs `tinacms dev -c "next dev"`,
+which starts a local Tina server alongside Next.js so you can use
+`/admin/index.html` locally too, without needing Tina Cloud credentials
+for content stored in this repo (only production deploys need the
+`NEXT_PUBLIC_TINA_CLIENT_ID`/`TINA_TOKEN` env vars from step 3 above).
 
 ## Where the Logo Belongs
 
-The supplied Normandeau Memorials logo was not available in this build
-environment. Place the real file at:
+The real Normandeau Memorials logo is at `public/images/normandeau-logo.png`,
+rendered via `next/image` in `src/components/layout/Logo.tsx`. It's
+deliberately outside `content/`/`public/uploads/` and not TinaCMS-managed —
+the brand mark shouldn't be swapped casually. To replace it, add the new
+file at that same path (same guidance applies: don't redraw, distort, or
+recreate supplied artwork).
 
-```
-public/images/normandeau-logo.png
-```
+## Replacing or Adding Photos
 
-Then update `src/components/layout/Logo.tsx` — it currently renders a
-text-based wordmark placeholder and has a `TODO(logo)` comment marking
-exactly where to swap in a `next/image` reference to the real file. Do
-not redraw, distort, or recreate the supplied artwork.
+Preferred path: use the TinaCMS admin at `/admin/index.html` — its media
+picker uploads directly into `public/uploads/` and updates the relevant
+JSON file automatically.
 
-## Replacing Placeholder Images
-
-All photography is currently rendered by `ImagePlaceholder`
-(`src/components/ui/ImagePlaceholder.tsx`) — a labeled dashed-border box,
-not a stock photo — so nothing misleading ships before real photography
-exists. To replace one:
-
-1. Add the real image file under `public/images/...`.
-2. Replace the `<ImagePlaceholder ... />` usage with `next/image`,
-   reusing the same `alt` text (or an improved, accurate description).
-3. For the gallery, add the image path to the matching entry in
-   `src/data/gallery-items.ts`.
+To do it by hand instead: add the image file under `public/uploads/...`,
+then set the matching `image` field in the relevant `content/*.json`
+file to that path. Any photo slot without an `image` value falls back to
+a labeled placeholder box (`src/components/ui/ImagePlaceholder.tsx`)
+instead of a stock photo, so nothing misleading ships before real
+photography exists.
 
 ## Updating Contact Information
 
-Everything lives in `src/config/site-config.ts` — phone, email, address,
-hours, appointment policy, and social links. Update it once and the
-header, footer, contact page, and structured data all pick it up
-automatically.
+Preferred path: edit "Site Settings" in the TinaCMS admin at
+`/admin/index.html` — phone, email, address, hours, appointment policy,
+and social links live there. Under the hood it writes to
+`content/site-settings.json`, which `src/config/site-config.ts` reads;
+update either one and the header, footer, contact page, and structured
+data all pick it up automatically.
 
 ## Updating Navigation
 
@@ -113,9 +159,11 @@ Edit `src/data/navigation.ts`:
 
 ## Updating Service Areas
 
-Edit `src/data/service-areas.ts` (the `serviceAreas` array and
-`serviceAreaStatement` string). Used on the homepage, footer, and in
-LocalBusiness structured data.
+Preferred path: edit "Service Areas" in the TinaCMS admin at
+`/admin/index.html`. Under the hood it writes to
+`content/service-areas.json` (the `serviceAreas` array and
+`serviceAreaStatement` string), read by `src/data/service-areas.ts`.
+Used on the homepage, footer, and in LocalBusiness structured data.
 
 ## Connecting the Contact Form
 
@@ -142,13 +190,25 @@ Update `url` in `src/config/site-config.ts`. `buildMetadata()`,
 `robots.ts`, `sitemap.ts`, and the structured-data components all derive
 from that single value.
 
-## Deploying to Vercel
+## Deploying
 
-1. Push this repository to GitHub.
-2. Import it in Vercel (Framework Preset: Next.js — auto-detected).
-3. No environment variables are required for this initial build.
-4. Once a form backend, analytics, or CMS is added, set their
-   environment variables in the Vercel project settings before deploying.
+This project deploys to **Cloudflare Pages/Workers** via
+`@opennextjs/cloudflare` (see the `deploy`/`preview`/`upload` scripts in
+`package.json`, and `wrangler.jsonc`/`wrangler.toml` if present).
+
+1. Push this repository to GitHub; Cloudflare Pages is already
+   connected via its GitHub App and builds `main` automatically.
+2. Required environment variables (set in the Cloudflare Pages project
+   settings): `NEXT_PUBLIC_TINA_CLIENT_ID` and `TINA_TOKEN` — see
+   "Editing Content with TinaCMS" above. Without these, the production
+   build fails at the `tinacms build` step.
+3. Once a form backend or analytics provider is added, set their
+   environment variables here too before deploying.
+
+The site could also be deployed elsewhere Next.js runs (Vercel, Node
+hosting, etc.) — the `@opennextjs/cloudflare` pieces are only needed for
+the Cloudflare-specific `deploy`/`preview`/`upload` scripts, not for
+`npm run build` itself.
 
 ## Future Email and DNS Migration Considerations
 

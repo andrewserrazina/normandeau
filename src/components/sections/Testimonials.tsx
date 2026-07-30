@@ -1,24 +1,15 @@
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TestimonialCard } from "@/components/ui/TestimonialCard";
-
-// TODO(content): These are labeled placeholders, not real customer
-// reviews. Replace with verified testimonials before launch.
-const placeholderTestimonials = [
-  { quote: "Customer testimonial will appear here.", attribution: "Placeholder — verified review pending" },
-  { quote: "Customer testimonial will appear here.", attribution: "Placeholder — verified review pending" },
-  { quote: "Customer testimonial will appear here.", attribution: "Placeholder — verified review pending" },
-];
+import { testimonials } from "@/data/testimonials";
 
 export function Testimonials() {
   return (
     <section className="py-16 sm:py-20">
       <Container>
-        <SectionHeading
-          title="What Families Are Saying"
-        />
+        <SectionHeading title="What Families Are Saying" />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3">
-          {placeholderTestimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial, index) => (
             <TestimonialCard
               key={index}
               quote={testimonial.quote}

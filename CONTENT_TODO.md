@@ -38,7 +38,7 @@ before this site goes live.
       reflect this (a single "by appointment only" entry, not fabricated
       weekday hours).
 
-## Contact Information (`src/config/site-config.ts`)
+## Contact Information (edit via TinaCMS "Site Settings," or `content/site-settings.json` directly)
 
 - [x] Phone: (413) 734-0168, with (413) 237-0764 as a second line —
       confirmed on the previous site's home and contact pages.
@@ -64,8 +64,9 @@ before this site goes live.
 - [x] Hero image, memorial category photos (Upright, Companion, Slant,
       Bevel, Custom), the homepage featured gallery, and the full
       `/gallery` page now use 12 real photos supplied by the business
-      (see `public/images/gallery/` and `public/images/README.md` for
-      the full mapping). Original filenames were preserved as requested.
+      (see `public/uploads/gallery/` — managed through the TinaCMS
+      media picker at `/admin/index.html`). Original filenames were
+      preserved as requested.
 - [ ] Flat Marker and Restoration gallery photos — none were supplied,
       so those two gallery filters currently show the empty state.
 - [ ] Memorial category photos still needed for: Benches, Mausoleums,
@@ -112,7 +113,19 @@ before this site goes live.
       only a honeypot field exists today.
 - [ ] Analytics (e.g. GA4, Plausible).
 - [ ] Map embed (e.g. Google Maps) on the Contact page.
-- [ ] CMS for gallery/blog content, if desired later.
+- [x] CMS for text/photo content — TinaCMS is wired up (see README.md
+      "Editing Content with TinaCMS"), but **won't work in production
+      until someone completes the one-time TinaCloud setup**:
+      1. Sign up at tina.io and connect this GitHub repo.
+      2. Copy the Client ID and generate a Content Token from the Tina
+         Cloud dashboard.
+      3. Add `NEXT_PUBLIC_TINA_CLIENT_ID` and `TINA_TOKEN` as
+         environment variables in the Cloudflare Pages project
+         settings, then redeploy.
+      4. Confirm Cloudflare's configured build command actually runs
+         `npm run build` (or otherwise includes `npx tinacms build`)
+         so the `/admin/index.html` bundle gets generated.
+      5. Invite the business owner's email as a Tina Cloud collaborator.
 
 ## SEO
 

@@ -1,0 +1,35 @@
+{
+  "name": "Normandeau Memorials",
+  "tagline": "Memorial Craftsmanship in Western Massachusetts",
+  "description": "Family owned since 1937, Normandeau Memorials helps families throughout West Springfield and Western Massachusetts create meaningful, enduring granite memorials with thoughtful guidance and careful craftsmanship.",
+  "familyOwnedSince": 1937,
+  "guarantee": "Our monuments are fully guaranteed against any defect in material and workmanship.",
+  "contact": {
+    "phoneDisplay": "(413) 734-0168",
+    "phoneHref": "tel:+14137340168",
+    "phoneAltDisplay": "(413) 237-0764",
+    "phoneAltHref": "tel:+14132370764",
+    "email": "service@normandeaumemorials.com",
+    "address": {
+      "line1": "1635 Riverdale St.",
+      "line2": "",
+      "city": "West Springfield",
+      "state": "MA",
+      "stateFull": "Massachusetts",
+      "zip": "01089",
+      "country": "US"
+    },
+    "hours": [{ "days": "All visits", "hours": "By appointment only" }],
+    "appointmentNote": "Normandeau Memorials operates by appointment only — please call ahead to schedule a time to visit our showroom."
+  },
+  "social": {
+    "facebook": "",
+    "instagram": ""
+  },
+  "geo": {
+    "latitude": 42.1478777,
+    "longitude": -72.6301729
+  },
+  "heroImage": "/uploads/gallery/Mahogany.jpg",
+  "heroImageAlt": "Mahogany granite upright monument with etched cross and rose corner details, displayed in our showroom courtyard"
+}
