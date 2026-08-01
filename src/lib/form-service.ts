@@ -5,31 +5,40 @@ export interface FormSubmitResult {
   message: string;
 }
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
+const SUCCESS_MESSAGE =
+  "Thank you — your consultation request has been sent. We'll be in touch soon.";
+const MISCONFIGURED_MESSAGE =
+  "This form isn't connected yet. Please call us directly to reach someone right away.";
+const ERROR_MESSAGE =
+  "Something went wrong while submitting. Please try again or call us directly.";
+
 /**
- * Thin abstraction over "send the consultation form somewhere." Swap the
- * body of this function to call a real provider without touching the
- * form component:
- *
- *   - Resend / email API: POST to an internal API route that sends mail.
- *   - Formspree: POST values directly to your Formspree endpoint.
- *   - HubSpot: POST to the HubSpot Forms API with your portal/form IDs.
- *   - Custom API route: POST to /api/consultation (create under src/app/api).
- *
- * TODO(integration): No backend is connected yet. This currently
- * simulates a network request so the UI can be built and tested end to
- * end; replace the body below when a provider is chosen.
+ * Submits the consultation form to Formspree
+ * (https://formspree.io/f/{form_id}). Set NEXT_PUBLIC_FORMSPREE_ENDPOINT to
+ * that URL as a build-time environment variable (it's inlined into the
+ * client bundle, same as NEXT_PUBLIC_TINA_CLIENT_ID).
  */
 export async function submitConsultationForm(
   values: ConsultationFormValues
 ): Promise<FormSubmitResult> {
-  // TODO(integration): replace with a real fetch() call once a provider
-  // (Resend, Formspree, HubSpot, or a custom /api route) is connected.
-  await new Promise((resolve) => setTimeout(resolve, 900));
-  void values;
+  if (!FORMSPREE_ENDPOINT) {
+    console.error(
+      "NEXT_PUBLIC_FORMSPREE_ENDPOINT is not set; consultation form cannot submit."
+    );
+    return { success: false, message: MISCONFIGURED_MESSAGE };
+  }
 
-  return {
-    success: true,
-    message:
-      "Development mode: form submitted successfully. No message was actually sent — connect an email or CRM provider in src/lib/form-service.ts.",
-  };
+  const response = await fetch(FORMSPREE_ENDPOINT, {
+    method: "POST",
+    headers: { Accept: "application/json", "Content-Type": "application/json" },
+    body: JSON.stringify(values),
+  });
+
+  if (!response.ok) {
+    return { success: false, message: ERROR_MESSAGE };
+  }
+
+  return { success: true, message: SUCCESS_MESSAGE };
 }

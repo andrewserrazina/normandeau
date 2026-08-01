@@ -167,15 +167,31 @@ Used on the homepage, footer, and in LocalBusiness structured data.
 
 ## Connecting the Contact Form
 
-`src/lib/form-service.ts` exports `submitConsultationForm()`, currently a
-simulated request used so the UI (loading/success/error states) can be
-built and tested without a backend. To connect a real provider, replace
-the body of that function only — the form component
-(`src/components/forms/ConsultationForm.tsx`) does not need to change:
+`src/lib/form-service.ts` exports `submitConsultationForm()`, which posts
+the consultation form directly to [Formspree](https://formspree.io):
+
+1. Create a free Formspree account and a form for this site; copy its
+   endpoint URL (`https://formspree.io/f/xxxxxxxx`).
+2. Set `NEXT_PUBLIC_FORMSPREE_ENDPOINT` to that URL — locally in
+   `.env.local` (copy `.env.example`), and in production as a Cloudflare
+   Pages **build variable** (same place as `NEXT_PUBLIC_TINA_CLIENT_ID` —
+   see "Editing Content with TinaCMS" above). It's a `NEXT_PUBLIC_*`
+   variable because it's read at build time and inlined into the client
+   bundle, so it must be set before `npm run build` runs, not just at
+   runtime.
+3. Redeploy. Submissions will arrive in the Formspree dashboard and be
+   emailed to whatever address you configured there.
+
+If `NEXT_PUBLIC_FORMSPREE_ENDPOINT` isn't set, the form fails closed with
+a message telling the visitor to call directly, instead of silently
+pretending to succeed.
+
+To switch providers later, only `submitConsultationForm()` needs to
+change — the form component (`src/components/forms/ConsultationForm.tsx`)
+doesn't:
 
 - **Resend / custom email** — call an internal API route
   (`src/app/api/consultation/route.ts`) that sends mail via Resend.
-- **Formspree** — `fetch()` the values directly to your Formspree endpoint.
 - **HubSpot** — POST to the HubSpot Forms API with your portal/form IDs.
 - **Custom CRM** — POST to whatever endpoint your CRM exposes.
 

@@ -103,12 +103,11 @@ before this site goes live.
 
 ## Integrations (Not Yet Connected)
 
-- [ ] Contact/consultation form backend — see "Connecting the Contact
-      Form" in `README.md` and `src/lib/form-service.ts`. Note: the
-      previous site's contact form submitted to a Weebly form endpoint
-      with Name/Phone/Email/Comment fields and reCAPTCHA — this build's
-      form is more detailed (adds preferred contact method and memorial
-      type) but will need its own backend connected.
+- [x] Contact/consultation form backend — wired to Formspree (see
+      "Connecting the Contact Form" in `README.md` and
+      `src/lib/form-service.ts`). TODO: create the Formspree account/form
+      and set `NEXT_PUBLIC_FORMSPREE_ENDPOINT` (locally and in Cloudflare
+      Pages' build variables) before this actually delivers submissions.
 - [ ] Spam protection (hCaptcha/reCAPTCHA or server-side rate limiting) —
       only a honeypot field exists today.
 - [ ] Analytics (e.g. GA4, Plausible).
