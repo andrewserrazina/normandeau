@@ -5,96 +5,97 @@
       "title": "Upright Monument with Rose Etching",
       "category": "Upright",
       "caption": "Black granite upright monument with an etched rose corner design.",
-      "imageAlt": "Black granite upright monument with an etched rose corner design",
-      "image": "/uploads/gallery/BlackRose.jpg"
+      "image": "/uploads/gallery/BlackRose.jpg",
+      "imageAlt": "Black granite upright monument with an etched rose corner design"
     },
     {
       "id": "gallery-02",
       "title": "Companion Memorial with Portrait",
       "category": "Companion",
       "caption": "Heart-shaped granite memorial with a porcelain photo portrait.",
-      "imageAlt": "Heart-shaped granite memorial with a porcelain photo portrait",
-      "image": "/uploads/gallery/perpetuate.jpg"
+      "image": "/uploads/gallery/perpetuate.jpg",
+      "imageAlt": "Heart-shaped granite memorial with a porcelain photo portrait"
     },
     {
       "id": "gallery-03",
       "title": "Slant Marker",
       "category": "Slant",
       "caption": "Rock-pitched pink granite slant memorial marker.",
-      "imageAlt": "Rock-pitched pink granite slant memorial marker",
-      "image": "/uploads/gallery/Pink1.jpg"
+      "image": "/uploads/gallery/Pink1.jpg",
+      "imageAlt": "Rock-pitched pink granite slant memorial marker"
     },
     {
       "id": "gallery-04",
       "title": "Upright Monument with Celtic Cross",
       "category": "Upright",
       "caption": "Gray granite upright monument with an etched Celtic cross.",
-      "imageAlt": "Gray granite upright monument with an etched Celtic cross",
-      "image": "/uploads/gallery/GrayCross.jpg"
+      "image": "/uploads/gallery/GrayCross.jpg",
+      "imageAlt": "Gray granite upright monument with an etched Celtic cross"
     },
     {
       "id": "gallery-05",
       "title": "Book of Life Custom Memorial",
       "category": "Custom",
       "caption": "Custom Book of Life-shaped granite memorial with an etched rose medallion.",
-      "imageAlt": "Book of Life custom-shaped granite memorial with an etched rose medallion",
-      "image": "/uploads/gallery/Traditional.jpg"
+      "image": "/uploads/gallery/Traditional.jpg",
+      "imageAlt": "Book of Life custom-shaped granite memorial with an etched rose medallion"
     },
     {
       "id": "gallery-06",
       "title": "Detailed Rose Etching",
       "category": "Lettering",
       "caption": "Detail of a hand-etched rose corner design on polished black granite.",
-      "imageAlt": "Close-up detail of a hand-etched rose corner design on black granite",
-      "image": "/uploads/gallery/artisticetchings.jpg"
+      "image": "/uploads/gallery/artisticetchings.jpg",
+      "imageAlt": "Close-up detail of a hand-etched rose corner design on black granite"
     },
     {
       "id": "gallery-07",
       "title": "Upright Monument with Calla Lily Panels",
       "category": "Upright",
       "caption": "Gray granite upright monument with etched calla lily side panels.",
-      "imageAlt": "Gray granite upright monument with etched calla lily side panels",
-      "image": "/uploads/gallery/Traditional1.jpg"
+      "image": "/uploads/gallery/Traditional1.jpg",
+      "imageAlt": "Gray granite upright monument with etched calla lily side panels"
     },
     {
       "id": "gallery-08",
       "title": "Upright Monument, In God's Care",
       "category": "Upright",
       "caption": "Pink granite upright monument with an etched heart, cross, and doves.",
-      "imageAlt": "Pink granite upright monument with an etched heart, cross, and doves reading In God's Care",
-      "image": "/uploads/gallery/Pink2.jpg"
+      "image": "/uploads/gallery/Pink2.jpg",
+      "imageAlt": "Pink granite upright monument with an etched heart, cross, and doves reading In God's Care"
     },
     {
       "id": "gallery-09",
       "title": "Geometric Upright Monument",
       "category": "Upright",
       "caption": "Gray granite upright monument with a beveled geometric profile.",
-      "imageAlt": "Gray granite upright monument with a beveled geometric profile",
-      "image": "/uploads/gallery/Types.jpg"
+      "image": "/uploads/gallery/Types.jpg",
+      "imageAlt": "Gray granite upright monument with a beveled geometric profile"
     },
     {
       "id": "gallery-10",
       "title": "Mahogany Monument with Cross and Rose",
       "category": "Upright",
       "caption": "Mahogany granite upright monument with etched cross and rose corner details.",
-      "imageAlt": "Mahogany granite upright monument with etched cross and rose corner details",
-      "image": "/uploads/gallery/Mahogany.jpg"
+      "image": "/uploads/gallery/Mahogany.jpg",
+      "imageAlt": "Mahogany granite upright monument with etched cross and rose corner details"
     },
     {
       "id": "gallery-11",
       "title": "Father Lettering Detail",
       "category": "Lettering",
       "caption": "Detail of engraved lettering and religious artwork reading Father.",
-      "imageAlt": "Detail of engraved lettering and religious artwork reading Father",
-      "image": "/uploads/gallery/father.jpg"
+      "image": "/uploads/gallery/father.jpg",
+      "imageAlt": "Detail of engraved lettering and religious artwork reading Father"
     },
     {
       "id": "gallery-12",
       "title": "Enduring Granite Monument",
       "category": "Upright",
       "caption": "Black granite upright monument with an etched rose corner design.",
-      "imageAlt": "Black granite upright monument with an etched rose corner design, shown at an angle",
-      "image": "/uploads/gallery/enduringgranite.jpg"
-    }
+      "image": "/uploads/gallery/enduringgranite.jpg",
+      "imageAlt": "Black granite upright monument with an etched rose corner design, shown at an angle"
+    },
+    {}
   ]
 }
