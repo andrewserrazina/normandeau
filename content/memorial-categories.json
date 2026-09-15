@@ -17,8 +17,8 @@
         "Etched artwork or emblems",
         "Vases and companion bases"
       ],
-      "imageAlt": "Black granite upright monument with an etched rose corner design",
-      "image": "/uploads/gallery/BlackRose.jpg"
+      "image": "/uploads/gallery/BlackRose.jpg",
+      "imageAlt": "Black granite upright monument with an etched rose corner design"
     },
     {
       "slug": "companion-monuments",
@@ -36,8 +36,8 @@
         "Matching or contrasting granite tones",
         "Center artwork or emblem"
       ],
-      "imageAlt": "Heart-shaped granite memorial with a porcelain photo portrait",
-      "image": "/uploads/gallery/perpetuate.jpg"
+      "image": "/uploads/gallery/perpetuate.jpg",
+      "imageAlt": "Heart-shaped granite memorial with a porcelain photo portrait"
     },
     {
       "slug": "flat-markers",
@@ -55,6 +55,7 @@
         "Border detail",
         "Small etched artwork"
       ],
+      "image": "/uploads/gallery/Marker-Examples.jpg",
       "imageAlt": "Flat granite grave marker placeholder"
     },
     {
@@ -72,8 +73,8 @@
         "Lettering layout",
         "Etched artwork or emblems"
       ],
-      "imageAlt": "Rock-pitched pink granite slant memorial marker",
-      "image": "/uploads/gallery/Pink1.jpg"
+      "image": "/uploads/gallery/Pink1.jpg",
+      "imageAlt": "Rock-pitched pink granite slant memorial marker"
     },
     {
       "slug": "bevel-markers",
@@ -90,8 +91,8 @@
         "Lettering style",
         "Border and edge detail"
       ],
-      "imageAlt": "Gray granite memorial marker with a beveled geometric profile",
-      "image": "/uploads/gallery/Types.jpg"
+      "image": "/uploads/gallery/Types.jpg",
+      "imageAlt": "Gray granite memorial marker with a beveled geometric profile"
     },
     {
       "slug": "benches",
@@ -179,8 +180,8 @@
         "Fully personalized artwork",
         "Combination of granite colors and finishes"
       ],
-      "imageAlt": "Book of Life custom-shaped granite memorial with an etched rose medallion",
-      "image": "/uploads/gallery/Traditional.jpg"
+      "image": "/uploads/gallery/Traditional.jpg",
+      "imageAlt": "Book of Life custom-shaped granite memorial with an etched rose medallion"
     }
   ]
 }
